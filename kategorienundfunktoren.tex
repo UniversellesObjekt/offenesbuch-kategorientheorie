@@ -33,10 +33,10 @@ eine Menge ist. Für diese Menge wählen wir die einfachere Notation $\{x\in X\m
 
 \begin{lemma}
 Die Klasse $R=\{x\mid x\notin x\}$ ist eine echte Klasse.
+\end{lemma}
 \begin{proof}
 Wäre $R$ eine Menge, so würde aus $R\in R$ folgen, dass $R$ die Eigenschaft $E(R)=R\notin R$ besitzt. Andererseits, wenn $R$ die Eigenschaft $R\notin R$ besitzt, muss $R$ in der Klasse $\{x\mid x\notin x\}$ liegen, also $R\in R$; Widerspruch.
 \end{proof}
-\end{lemma}
 
 Nach dem Teilmengenaxiom muss dann auch $U=\{x\mid x=x\}$ eine echte Klasse sein, da sonst auch $R\subseteq U$ eine Menge bilden würde. Wir nennen $U$ die \Def{Allklasse} oder die Klasse aller Mengen.
 
@@ -81,13 +81,14 @@ Sind $X$ und $Y$ Mengen, so ist auch
 \ll X,Y\rr=\left\{z\strich z=(x,y)\text{ für gewisse }x\in X,y\in Y\right\}
 \]
 eine Menge.
+\end{lemma}
 \begin{proof}
 Es gilt $\ll X,Y\rr\subseteq\pot\pot(X\cup Y)$. Die Behauptung folgt nun aus dem Teilmengenaxiom.
 \end{proof}
-\end{lemma}
 
 \begin{lemma}
 Für Mengen $x_1,x_2,y_1,y_2$ gilt $(x_1,x_2)=(y_1,y_2)$ genau dann, wenn $x_1=x_2$ und $y_1=y_2$.
+\end{lemma}
 \begin{proof}
 Dass aus $x_1=x_2$ und $y_1=y_2$ folgt, dass $(x_1,x_2)=(y_1,y_2)$, ist klar.
 
@@ -99,7 +100,6 @@ Sind hingegen $x_1$ und $x_2$ verschieden, so muss auch $y_1$ von $y_2$ verschie
 \end{align}
 folgt dann, dass $\{x_1\}=\{y_1\}$ oder $\{x_1\}=\{y_1,y_2\}$. Aus der zweiten Gleichung würde aber $y_1=x_1=y_2$ folgen, also muss die ersten Gleichung richtig sein, aus welcher $x_1=y_1$ folgt. Aus (1) folgt dann, dass $\{x_1,x_2\}=\{y_1,y_2\}$. Da $x_2$ von $x_1=y_1$ verschieden ist, aber $x_2\in\{y_1,y_2\}$, muss auch $x_2=y_2$ gelten.
 \end{proof}
-\end{lemma}
 
 \section{Relationen und Abbildungen}
 
