@@ -1,0 +1,268 @@
+\section{Klassen und Mengen}
+Um sinnvoll über Mathemaik im Allgemeinen und Kategorien im Speziellen reden zu können, müssen wir zunächst einige Grundbegriffe bezüglich Mengen und Klassen einführen.
+
+Alle mathematischen Objekte, die wir betrachten sind so genannte \Def{Klassen}. Zwischen zwei Klassen $x$ und $X$ kann die \Def{Elementrelation} $\in$ gelten, wir schreiben dann $x\in X$ und nennen $x$ ein \Def{Element} von $X$. Ist eine Klasse $X$ ein Element einer anderen Klasse, so nennen wir $X$ eine \Def{Menge}. Ist eine Klasse keine Menge, so heißt sie eine \Def{echte Klasse}.
+
+Durch Axiome wollen wir in diesem Kapitel festlegen, wie Klassen und Mengen manipuliert werden können. Wir nennen eine Klasse $X$ \Def{Teilklasse} einer Klasse $Y$, wenn aus $x\in X$ stets $x\in Y$ folgt. Wir schreiben dann $X\subseteq Y$.
+
+\begin{axiom}
+Zwei Klassen $X$ und $Y$ sind genau dann gleich, wenn $X\subseteq Y$ und $Y\subseteq X$.
+\end{axiom}
+
+Anschaulich besagt dieses Axiom, das \Def{Extensionalitätsaxiom}, dass zwei Klassen genau dann gleich sind, wenn sie dieselben Elemente enthalten.
+
+\begin{axiom}
+Jede Teilklasse einer Menge ist selbst eine Menge.
+\end{axiom}
+
+Ist $Y$ eine Menge und $X\subseteq Y$ eine Teilklasse von $Y$, so heißt $X$ aufgrund obigen Axioms auch eine \Def{Teilmenge} von $Y$. Obiges Axiom nennen wir das \Def{Teilmengenaxiom}.
+
+\begin{axiom}
+Für jede Menge $x$ sei eine Aussage $E(x)$ gegeben, die entweder wahr oder falsch sein kann. Dann gibt es eine Klasse
+\[
+\{x\mid E(x)\}\,,
+\]
+welche genau die Mengen $x$ enthält, für welche $E(x)$ wahr ist.
+\end{axiom}
+
+Dieses Axiom, das \Def{Aussonderungsaxiom} zusammen mit dem Teilmengenaxiom garantiert, dass, falls $X$ eine Menge ist, auch die Klasse
+\[
+\{x\mid x\in X\textnormal{ und }E(x)\}
+\]
+eine Menge ist. Für diese Menge wählen wir die einfachere Notation $\{x\in X\mid E(x)\}$.
+
+\begin{lem}
+Die Klasse $R=\{x\mid x\notin x\}$ ist eine echte Klasse.
+\begin{bew}
+Wäre $R$ eine Menge, so würde aus $R\in R$ folgen, dass $R$ die Eigenschaft $E(R)=R\notin R$ besitzt. Andererseits, wenn $R$ die Eigenschaft $R\notin R$ besitzt, muss $R$ in der Klasse $\{x\mid x\notin x\}$ liegen, also $R\in R$; Widerspruch.
+\end{bew}
+\end{lem}
+
+Nach dem Teilmengenaxiom muss dann auch $U=\{x\mid x=x\}$ eine echte Klasse sein, da sonst auch $R\subseteq U$ eine Menge bilden würde. Wir nennen $U$ die \Def{Allklasse} oder die Klasse aller Mengen.
+
+\begin{axiom}
+Es existiert eine Menge.
+\end{axiom}
+
+Dieses \Def{Existenzaxiom} sichert, dass wir eine Menge $X$ wählen können. Nach dem Teilmengenaxiom ist dann auch
+\[\emptyset=\{x\mid x\not= x\}\] eine Menge, da $\emptyset$ offensichtlich Teilklasse jeder Klasse und insbesondere Teilmenge von $X$ ist. Wir nennen $\emptyset$ die \Def{leere Menge}. Für jede Klasse $x$ gilt $x\notin\emptyset$, da sonst $x\not= x$ gelten würde. Eine Klasse, welche ein Element enthält; also von $\emptyset$ verschieden ist, heißt \Def{nichtleer}.
+
+\begin{axiom}
+Für jede Menge $X$ ist auch
+\[
+\pot X=\{Y\mid Y\subseteq X\}
+\]
+eine Menge.
+\end{axiom}
+Wir nennen $\pot X$ die \Def{Potenzmenge} von $X$ und das Axiom, welches uns sichert, dass $\pot X$ tatsächlich eine Menge bildet das \Def{Potenzmengenaxiom}. Die Potenzmenge von $X$ enthält genau die Teilmengen von $X$.
+
+\begin{axiom}
+Sind $x$ und $y$ Mengen, so ist auch
+\[
+\{x,y\}=\{z\mid z=x\textnormal{ oder }z=y\}\]
+eine Menge.
+\end{axiom}
+Die Menge $\{x,y\}$ enthält genau die Mengen $x$ und $y$. Obiges Axiom heißt das \Def{Paarmengenaxiom}. Ist $x$ eine Menge, so schreiben wir für $\{x,x\}$ auch $\{x\}$ und nennen $\{x\}$ die \Def{einpunktige Menge}.
+
+\begin{axiom}
+Ist $\mathcal{X}$ eine Menge, so ist auch
+\[
+\bigcup\mathcal{X}=\left\{x\strich x\in X\textnormal{ für ein gewisses }X\in\mathcal{X}\right\}
+\]
+eine Menge.
+\end{axiom}
+Wir nennen diese Axiom das \Def{Vereinigungsaxiom} und $\bigcup\mathcal{X}$ die \Def{Vereinigung} von $\mathcal{X}$. Sie enthält genau die Elemente von Elementen von $\mathcal{X}$. Sind insbesondere $X$ und $Y$ Mengen, so schreiben wir $X\cup Y$ für $\bigcup\{X,Y\}$. Diese Menge enthält alle Mengen, die entweder ein Element von $X$ oder ein Element von $Y$ sind.
+
+Es seien $x$ und $y$ Mengen. Wir schreiben an dieser Stelle $(x,y)$ für $\{\{x\},\{x,y\}\}$. Dann gilt:
+
+\begin{lem}
+Sind $X$ und $Y$ Mengen, so ist auch
+\[
+\ll X,Y\rr=\left\{z\strich z=(x,y)\textnormal{ für gewisse }x\in X,y\in Y\right\}
+\]
+eine Menge.
+\begin{bew}
+Es gilt $\ll X,Y\rr\subseteq\pot\pot(X\cup Y)$. Die Behauptung folgt nun aus dem Teilmengenaxiom.
+\end{bew}
+\end{lem}
+
+\begin{lem}
+Für Mengen $x_1,x_2,y_1,y_2$ gilt $(x_1,x_2)=(y_1,y_2)$ genau dann, wenn $x_1=x_2$ und $y_1=y_2$.
+\begin{bew}
+Dass aus $x_1=x_2$ und $y_1=y_2$ folgt, dass $(x_1,x_2)=(y_1,y_2)$, ist klar.
+
+Gelte daher $(x_1,x_2)=(y_1,y_2)$. Wir unterscheiden zwei Fälle. Nehmen wir an, dass $x_1=x_2$, dann gilt $\{\{x_1\}\}=(x_1,x_2)=(y_1,y_2)=\{\{y_1\},\{y_1,y_2\}\}$. Es gilt daher $\{x_1\}=\{y_1\}=\{y_1,y_2\}$. Aus der ersten Gleichheit folgt $x_1=y_2$. Aus der zweiten Gleichheit folgt dann $y_1=y_2$ und insgesamt, dass $x_1=x_2=y_1=y_2$.
+
+Sind hingegen $x_1$ und $x_2$ verschieden, so muss auch $y_1$ von $y_2$ verschieden sein, da sonst obiges Argument analog greift. Insbesondere sind dann $\{x_1\}$ und $\{x_1,x_2\}$, sowie $\{y_1\}$ und $\{y_1,y_2\}$ verschieden. Aus
+\begin{align}
+\{\{x_1\},\{x_1,x_2\}\}=\{\{y_1\},\{y_1,y_2\}\}
+\end{align}
+folgt dann, dass $\{x_1\}=\{y_1\}$ oder $\{x_1\}=\{y_1,y_2\}$. Aus der zweiten Gleichung würde aber $y_1=x_1=y_2$ folgen, also muss die ersten Gleichung richtig sein, aus welcher $x_1=y_1$ folgt. Aus (1) folgt dann, dass $\{x_1,x_2\}=\{y_1,y_2\}$. Da $x_2$ von $x_1=y_1$ verschieden ist, aber $x_2\in\{y_1,y_2\}$, muss auch $x_2=y_2$ gelten.
+\end{bew}
+\end{lem}
+
+\section{Relationen und Abbildungen}
+
+Es seien $X$ und $Y$ zwei Mengen und $\mathcal{R}$ eine Teilmenge von $\ll X,Y\rr$. Dann nennen wir $R=((X,Y),\mathcal{R})$ eine \Def{Relation}. Offenbar ist $R$ eindeutig durch die Mengen $X,Y$ und die Teilmenge $\mathcal{R}$ festgelegt. Anstatt $(x,y)\in\mathcal{R}$ schreiben wir auch $xRy$. Um die Relation $R$ festzulegen, schreiben wir
+\[
+X\xlongrightarrow{R}Y\,,\qquad xRy\iff(x,y)\in\mathcal{R}\,.
+\]
+
+Gilt $X\xlongrightarrow{R}Y$, so bezeichnen wir $X$ mit $\dom R$, $Y$ mit $\cod R$ und nennen diese Mengen die \Def{Domäne} bzw. \Def{Kodomäne} von $R$.
+
+Haben wir zwei Relationen $X\xlongrightarrow{R}Y\xlongrightarrow{S}Z$ gegeben, so definieren wir die \Def{Komposition} durch
+\[
+X\xlongrightarrow{S\circ R}Z\,,\qquad x(S\circ R)z\iff xRy\textnormal{ und }ySz\textnormal{ für ein }y\in Y\,.
+\]
+\begin{auf}
+Sind drei Relationen $W\xlongrightarrow{R}X\xlongrightarrow{S}Y\xlongrightarrow{T}Z$ gegeben, so gilt
+\[(T\circ S)\circ R=T\circ(S\circ R)\,.\]
+\end{auf}
+Wir nennen eine Relation $X\xlongrightarrow{R}Y$ \Def{linkstotal}, wenn zu jedem $x\in X$ ein $y\in Y$ existiert mit $xRy$. Sie heißt \Def{rechtstotal}, wenn zu jedem $y\in Y$ ein $x\in X$ existiert mit $xRy$.
+\begin{auf}
+Die Komposition linkstotaler Relationen ist linkstotal. Die Komposition rechtstotaler Relationen ist rechtstotal.
+\end{auf}
+$X\xlongrightarrow{R}Y$ heißt \Def{linkseindeutig}, wenn zu jedem $y\in Y$ höchstens ein $x\in X$ existiert mit $xRy$. Sie heißt \Def{rechsteindeutig}, wenn zu jedem $x\in X$ höchstens ein $y\in Y$ existiert mit $xRy$.
+\begin{auf}
+Die Komposition linkseindeutiger Relationen ist linkseindeutig. Die Komposition rechtseindeutiger Relationen ist rechtseindeutig.
+\end{auf}
+Eine Relation $X\xlongrightarrow{f}Y$ heißt \Def{Abbildung}, wenn sie linkstotal und rechtseindeutig ist; das heißt, wenn zu jedem $x\in X$ genau ein $y\in Y$ existiert mit $xfy$. Dieses eindeutig bestimmte Element aus $Y$ bezeichnen wir mit $f(x)$ und nennen es das \Def{Bild} von $x$ unter $f$. Statt $f(x)$ schreiben wir auch $fx$ und vermeiden unnötige Klammern wann immer möglich. Eine Abbildung ist vollständig charakterisiert durch Angabe von Domäne, Kodomäne und für jedes Element aus der Domäne dessen Bild. Wir schreiben hierfür
+\[
+X\xlongrightarrow{f}Y\,,\qquad x\longmapsto fx
+\]
+oder auch
+\[
+X\xlongrightarrow{x\longmapsto fx}\,.
+\]
+Nach obigen Aufgaben ist die Komposition von Abbildungen $X\xlongrightarrow{f}Y\xlongrightarrow{g}Z$ wieder eine Abbildung. Sie ist offenbar gegeben durch
+\[
+X\xlongrightarrow{g\circ f}Y\,,\qquad x\longmapsto gfx\,.
+\]
+
+Eine Abbildung $X\xlongrightarrow{f}Y$ heißt \Def{injektiv}, wenn sie linkseindeutig ist. Das heißt, dass aus $fx_1=fx_2$ stets $x_1=x_2$ folgt. Sie heißt \Def{surjektiv}, wenn sie rechtstotal ist, das heißt, dass es zu jedem $y\in Y$ ein $x\in X$ gibt mit $fx=y$. Ein solches Element heißt \Def{Urbild} von $y$. Die Abbildung $f$ ist also genau dann injektiv, wenn jedes $y\in Y$ höchstens ein Urbild hat und genau dann surjektiv wenn jedes $y\in Y$ mindestens ein Urbild hat. $f$ heißt \Def{bijektiv}, wenn $f$ injektiv und surjektiv ist, wenn also jedes $y\in Y$ genau ein Urbild hat.
+
+Es sei weiterhin $X\xlongrightarrow{f}Y$ eine Abbildung. Ist $A$ eine Teilmenge von $X$, so schreiben wir 
+\[fA=\left\{y\in Y\strich y=fx\textnormal{ für ein gewisses }x\in X\right\}\,.\]
+$fA$ ist also die Menge aller Bilder von Elementen aus $A$. Wir nennen $fA$ auch das \Def{Bild} von $A$ unter $f$.
+
+Ist $B$ eine Teilmenge von $Y$, so heißt
+\[
+f^{-1}B=\left\{x\in X\mid fx\in B\right\}
+\]
+das \Def{Urbild} von $B$ unter $f$.
+
+\begin{bsp}
+Ist $X$ Teilmenge einer Menge $Y$, so haben wir die \Def{Inklustionsabbildung}
+\[
+X\xlongrightarrow{\iota}Y\,,\qquad x\longmapsto x\,,
+\]
+welche offensichtlich injektiv ist. Falls $X=Y$ gilt, ist $\iota$ sogar bijektiv und wir schreiben
+\[
+X\xlongrightarrow{\id_X}X\,,\qquad x\longmapsto x\,.
+\]
+Für jede Menge $X$ nennen wir $\id_X$ die \emph{Identität} auf $X$. Sind $R,Y$ beliebige Relationen
+\[
+W\xlongrightarrow{R}X\xlongrightarrow{\id_X}X\xlongrightarrow{S}Y\,,
+\]
+so gilt offenbar $\id_X\circ W=W$ und $S\circ\id_X=X$.
+\end{bsp}
+
+Sind $X,Y$ Klassen und nicht notwendigerweise Mengen, so nennen wir eine Teilmenge $R\subseteq\ll X,Y\rr$ eine \Def{Relation} zwischen $X$ und $Y$, ohne Domäne und Kodomäne zum Teil der Definition zu machen. Die Begriffe \Def{linkstotal}, \Def{rechtstotal}, \Def{linkseindeutig}, \Def{rechtseindeutig} und \Def{Abbildung} verwenden wir analog.
+
+\begin{axiom}
+Ist $U\xlongrightarrow{f}U$ eine Abbildung aus der Allklasse in sich selbst und ist $X$ eine Menge, so ist auch $fX$ eine Menge.
+\end{axiom}
+
+Dieses \Def{Ersetzungsaxiom} ist äquivalent zur folgenden stärkeren Formulierung:
+
+\begin{auf}
+Es sei $V\xlongrightarrow{f}W$ eine Abbildung von Klassen. Für jede Menge $X\subseteq V$ ist dann auch $fX$ eine Menge. 
+\end{auf}
+
+\section{Mengentheoretische Konstruktionen}
+
+Eine Abbildung $I\xlongrightarrow{x}X$ von Mengen nennen wir manchmal eine \Def{Familie}. In diesem Fall schreiben wir häufig $x_i$ für das Bild von $i$ unter $x$ und $(x_i)_{i\in I}$ für die Familie $x$. Die Kodomäne nennen wir in diesem Fall meist nicht. Die Menge $I$ nennen wir in dieser Situation die \Def{Indexmenge}. Ein Element aus der Indexmenge heißt ein \Def{Index}. Für $i\in I$ nennen wir $x_i$ die \Def{Komponente} von $(x_i)_{i\in I}$ an der Stelle $i$. Mit $X^I$ bezeichnen wir die Menge aller durch $I$ indizierten Familien mit Komponenten in $X$. 
+
+Ist $(X_i)_{i\in I}$ eine Familie von Mengen, so bezeichnen wir mit
+\[
+\bigcup_{i\in I}X_i=\left\{x\mid x\in X_i\textnormal{ für ein }i\in I\right\}
+\]
+die \Def{Vereinigung} der Familie. Schreiben wir die Familie als Abbildung $I\xlongrightarrow{X}Y$, so gilt offenbar $\bigcup_{i\in I}X_i=\bigcup XI$ und die Vereinigung der Familie bildet nach dem Vereinigungsaxiom sogar eine Menge.
+
+Mit
+\[
+\bigcap_{i\in I}X_i=\left\{x\mid x\in X_i\textnormal{ für alle } i\in I\right\}
+\]
+bezeichnen wir den \Def{Durchschnitt} der Familie. Falls $I$ leer ist, ist der Durchschnitt die Allklasse. Andernfalls ist der Durchschnitt offenbar in der Vereinigung enthalten und bildet nach dem Teilmengenaxiom eine Menge.
+
+Die Menge
+\[
+\prod_{i\in I}X_i=\left\{(x_i)_{i\in I}\in\left(\bigcup_{i\in I}X_i\right)^I\strich x_i\in X_i\textnormal{ für alle} i\in I\right\}
+\]
+heißt das \Def{kartesische Produkt} der Familie.
+
+Für jedes $i\in I$ haben wir eine Abbildung
+\[
+\prod_{i\in I}\xlongrightarrow{\pi_i}X_i\,,\qquad(x_i)_{i\in I}\longmapsto x_i\,,
+\]
+welche wir die \Def{Projektion} auf die $i$-te Komponente nennen.
+\begin{auf}
+Es sei $(X_i)_{i\in I}$ eine Familie von Mengen. Ist $W$ eine Mengen und $(W\xlongrightarrow{f_i}X_i)_{i\in I}$ eine Familie von Abbildungen, so existiert genau eine Abbildung
+\[W\xlongrightarrow{f}\prod_{i\in I}X_i\]
+mit $f_i=\pi_i\circ f$ für alle $i\in I$.
+\end{auf}
+
+Es seien zwei Mengen $X_1,X_2$ gegeben. In diesem Fall bezeichnen wir das kartesische Produkt
+\[
+\prod_{i\in \{1,2\}}X_i
+\]
+mit $X_1\times X_2$. Für ein Element $(x_i)_{i\in\{1,2\}}\in X_1\times X_2$ schreiben wir $\l x_1,x_2\r$ und nennen es ein \Def{Paar}. Haben wir noch eine dritte Menge $X_3$, so schreiben wir $X_1\times X_2\times X_3$ für das Produkt $\prod_{i\in\{1,2,3\}}X_i$ und schreiben $\l x_1,x_2,x_3\r$ für ein Element $(x_i)_{i\in\{1,2,3\}}$ des Produktes. Ein solches Element heißt \Def{Tripel}.
+
+\begin{bsp}
+Es seien $X_1\xlongrightarrow{g_1}W_1$ und $X_2\xlongrightarrow{g_2}W_2$ zwei Abbildungen. Wir setzen $W=X_1\times W_2$, $f_1=g_1\circ\pi_1$, $f_2=g_2\circ\pi_2$. Nach obiger Aufgabe existiert genau eine Abbildung $W_1\times W_2\xlongrightarrow{f}X_1\times X_2$, sodass $g_1\circ\pi_1=\pi_1\circ f$ und $g_2\circ\pi_2=\pi_2\circ f$ (wobei wir hier natürlich $\pi_i$ für die Projektionen sowohl von $X_1\times X_2$ als auch für die von $W_1\times W_2$ schreiben). Die eindeutig bestimmte Abbildung $f$ bezeichnen wir mit $g_1\times g_2$. Sie ist gegeben durch
+\[
+W_1\times W_2\xlongrightarrow{g_1\times g_2}X_1\times X_2\,,\qquad \l w_1,w_2\r\longmapsto\l g_1w_1,g_2w_2\r\,.
+\]
+\end{bsp}
+Mithilfe des kartesischen Produktes können wir das \Def{Auswahlaxiom} leicht formulieren
+\begin{axiom}
+Das kartesische Produkt einer Familie von nichtleeren Mengen ist nichtleer.
+\end{axiom}
+
+\section{Universen}
+
+\begin{axiom}
+Es existiert eine Menge $\IN$ zusammen mit zwei Abbildungen $\{\emptyset\}\xlongrightarrow{z}\IN\xlongrightarrow{s}\IN$, sodass für jede Menge $A$ zusammen mit zwei Abbildungen $\{\emptyset\}\xlongrightarrow{z'}A\xlongrightarrow{s'}A$ genau eine Abbildung $\IN\xlongrightarrow{r}A$ existiert, sodass $r\circ z=z'$ und $r\circ s=s'\circ r$.
+\end{axiom}
+Die Auswirkungen dieses \Def{Unendlicheitsaxioms} werden wir später studieren.
+
+Eine Menge $\U$ heißt ein \Def{Universum}, wenn gilt:
+\begin{itemize}
+\item Aus $X\in\U$ folgt $\pot X\in\U$.
+\item Aus $X\in\U$ folgt $X\subseteq U$.
+\item Gilt $I\in\U$ und sit $(X_i)_{i\in I}$ eine Familie von Mengen aus $\U$, so gilt $\prod_{i\in I}X_i\in\U$.
+\item Gilt $I\in\U$ und sit $(X_i)_{i\in I}$ eine Familie von Mengen aus $\U$, so gilt $\bigcup{i\in I}X_i\in\U$.
+\item Ist $X\in\U$, $Y\subseteq\U$ und $X\xlongrightarrow{f}Y$ eine Abbildung, so gilt auch $fX\in\U$.
+\item $\IN\in\U$.
+\end{itemize}
+
+Man beachte, dass die Allklasse $U$ allen Bedingungen genügt, außer dass sie selbst keine Menge ist.
+
+Ist $\U$ ein Universum, so kann man sich überlegen, dass ferner gilt:
+
+\begin{itemize}
+\item $\emptyset\in\U$
+\item Aus $X\in\U$ und $x\in X$ folgt $x\in\U$.
+\item Aus $x,y\in\U$ folgt $\{x,y\}\in\U$.
+\item Aus $I,X\in\U$ folgt $X^I\in\U$.
+\item Sind $X,Y\in\U$ und ist $X\xlongrightarrow{R}Y$ eine Relation, so gilt $R\in\U$.
+\item Ist $Y\in\U$ und gilt $X\subseteq Y$, so folgt $X\in\U$.
+\end{itemize}
+
+In anderen Worten können wir alle Konstruktionen, die wir in $U$ eingeführt haben, auch in jedem Universum $\U$ durchführen. Zusammen mit dem nachfolgenden \Def{Universenaxiom} sichert dies, dass man Mathematik sorgenfrei innerhalb eines Universums durchführen kann.
+
+\begin{axiom}
+Jede Menge ist Element eines Universums.
+\end{axiom}
+
+Eine Menge heißt \Def{$\U$-klein}, wenn sie Element von $\U$ ist. Ist klar oder nicht wichtig, welches Universum wir betrachten, nennen wir die Menge auch einfach \Def{klein}. Wann immer wir von kleinen Mengen sprechen, setzen wir ein Universum voraus, auf das wir uns beziehen.
