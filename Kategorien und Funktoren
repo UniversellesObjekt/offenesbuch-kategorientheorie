@@ -1,0 +1,3 @@
+\section{Graphen}
+
+Ein \Def{(gerichteter) Graph} besteht aus einer Menge $O$, deren Menge wir \Def{Objekte} nennen, einer Menge $P$, deren Elemente wir \Def{Pfeile} nennen, sowie zwei Abbildungen $P\xlongrightarrow{d,c}O$.
