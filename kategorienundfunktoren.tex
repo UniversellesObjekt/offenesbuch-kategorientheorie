@@ -27,16 +27,16 @@ welche genau die Mengen $x$ enthält, für welche $E(x)$ wahr ist.
 
 Dieses Axiom, das \Def{Aussonderungsaxiom} zusammen mit dem Teilmengenaxiom garantiert, dass, falls $X$ eine Menge ist, auch die Klasse
 \[
-\{x\mid x\in X\textnormal{ und }E(x)\}
+\{x\mid x\in X\text{ und }E(x)\}
 \]
 eine Menge ist. Für diese Menge wählen wir die einfachere Notation $\{x\in X\mid E(x)\}$.
 
-\begin{lem}
+\begin{lemma}
 Die Klasse $R=\{x\mid x\notin x\}$ ist eine echte Klasse.
-\begin{bew}
+\begin{proof}
 Wäre $R$ eine Menge, so würde aus $R\in R$ folgen, dass $R$ die Eigenschaft $E(R)=R\notin R$ besitzt. Andererseits, wenn $R$ die Eigenschaft $R\notin R$ besitzt, muss $R$ in der Klasse $\{x\mid x\notin x\}$ liegen, also $R\in R$; Widerspruch.
-\end{bew}
-\end{lem}
+\end{proof}
+\end{lemma}
 
 Nach dem Teilmengenaxiom muss dann auch $U=\{x\mid x=x\}$ eine echte Klasse sein, da sonst auch $R\subseteq U$ eine Menge bilden würde. Wir nennen $U$ die \Def{Allklasse} oder die Klasse aller Mengen.
 
@@ -59,7 +59,7 @@ Wir nennen $\pot X$ die \Def{Potenzmenge} von $X$ und das Axiom, welches uns sic
 \begin{axiom}
 Sind $x$ und $y$ Mengen, so ist auch
 \[
-\{x,y\}=\{z\mid z=x\textnormal{ oder }z=y\}\]
+\{x,y\}=\{z\mid z=x\text{ oder }z=y\}\]
 eine Menge.
 \end{axiom}
 Die Menge $\{x,y\}$ enthält genau die Mengen $x$ und $y$. Obiges Axiom heißt das \Def{Paarmengenaxiom}. Ist $x$ eine Menge, so schreiben wir für $\{x,x\}$ auch $\{x\}$ und nennen $\{x\}$ die \Def{einpunktige Menge}.
@@ -67,7 +67,7 @@ Die Menge $\{x,y\}$ enthält genau die Mengen $x$ und $y$. Obiges Axiom heißt d
 \begin{axiom}
 Ist $\mathcal{X}$ eine Menge, so ist auch
 \[
-\bigcup\mathcal{X}=\left\{x\strich x\in X\textnormal{ für ein gewisses }X\in\mathcal{X}\right\}
+\bigcup\mathcal{X}=\left\{x\strich x\in X\text{ für ein gewisses }X\in\mathcal{X}\right\}
 \]
 eine Menge.
 \end{axiom}
@@ -75,20 +75,20 @@ Wir nennen diese Axiom das \Def{Vereinigungsaxiom} und $\bigcup\mathcal{X}$ die 
 
 Es seien $x$ und $y$ Mengen. Wir schreiben an dieser Stelle $(x,y)$ für $\{\{x\},\{x,y\}\}$. Dann gilt:
 
-\begin{lem}
+\begin{lemma}
 Sind $X$ und $Y$ Mengen, so ist auch
 \[
-\ll X,Y\rr=\left\{z\strich z=(x,y)\textnormal{ für gewisse }x\in X,y\in Y\right\}
+\ll X,Y\rr=\left\{z\strich z=(x,y)\text{ für gewisse }x\in X,y\in Y\right\}
 \]
 eine Menge.
-\begin{bew}
+\begin{proof}
 Es gilt $\ll X,Y\rr\subseteq\pot\pot(X\cup Y)$. Die Behauptung folgt nun aus dem Teilmengenaxiom.
-\end{bew}
-\end{lem}
+\end{proof}
+\end{lemma}
 
-\begin{lem}
+\begin{lemma}
 Für Mengen $x_1,x_2,y_1,y_2$ gilt $(x_1,x_2)=(y_1,y_2)$ genau dann, wenn $x_1=x_2$ und $y_1=y_2$.
-\begin{bew}
+\begin{proof}
 Dass aus $x_1=x_2$ und $y_1=y_2$ folgt, dass $(x_1,x_2)=(y_1,y_2)$, ist klar.
 
 Gelte daher $(x_1,x_2)=(y_1,y_2)$. Wir unterscheiden zwei Fälle. Nehmen wir an, dass $x_1=x_2$, dann gilt $\{\{x_1\}\}=(x_1,x_2)=(y_1,y_2)=\{\{y_1\},\{y_1,y_2\}\}$. Es gilt daher $\{x_1\}=\{y_1\}=\{y_1,y_2\}$. Aus der ersten Gleichheit folgt $x_1=y_2$. Aus der zweiten Gleichheit folgt dann $y_1=y_2$ und insgesamt, dass $x_1=x_2=y_1=y_2$.
@@ -98,8 +98,8 @@ Sind hingegen $x_1$ und $x_2$ verschieden, so muss auch $y_1$ von $y_2$ verschie
 \{\{x_1\},\{x_1,x_2\}\}=\{\{y_1\},\{y_1,y_2\}\}
 \end{align}
 folgt dann, dass $\{x_1\}=\{y_1\}$ oder $\{x_1\}=\{y_1,y_2\}$. Aus der zweiten Gleichung würde aber $y_1=x_1=y_2$ folgen, also muss die ersten Gleichung richtig sein, aus welcher $x_1=y_1$ folgt. Aus (1) folgt dann, dass $\{x_1,x_2\}=\{y_1,y_2\}$. Da $x_2$ von $x_1=y_1$ verschieden ist, aber $x_2\in\{y_1,y_2\}$, muss auch $x_2=y_2$ gelten.
-\end{bew}
-\end{lem}
+\end{proof}
+\end{lemma}
 
 \section{Relationen und Abbildungen}
 
@@ -112,20 +112,20 @@ Gilt $X\xlongrightarrow{R}Y$, so bezeichnen wir $X$ mit $\dom R$, $Y$ mit $\cod 
 
 Haben wir zwei Relationen $X\xlongrightarrow{R}Y\xlongrightarrow{S}Z$ gegeben, so definieren wir die \Def{Komposition} durch
 \[
-X\xlongrightarrow{S\circ R}Z\,,\qquad x(S\circ R)z\iff xRy\textnormal{ und }ySz\textnormal{ für ein }y\in Y\,.
+X\xlongrightarrow{S\circ R}Z\,,\qquad x(S\circ R)z\iff xRy\text{ und }ySz\text{ für ein }y\in Y\,.
 \]
-\begin{auf}
+\begin{task}
 Sind drei Relationen $W\xlongrightarrow{R}X\xlongrightarrow{S}Y\xlongrightarrow{T}Z$ gegeben, so gilt
 \[(T\circ S)\circ R=T\circ(S\circ R)\,.\]
-\end{auf}
+\end{task}
 Wir nennen eine Relation $X\xlongrightarrow{R}Y$ \Def{linkstotal}, wenn zu jedem $x\in X$ ein $y\in Y$ existiert mit $xRy$. Sie heißt \Def{rechtstotal}, wenn zu jedem $y\in Y$ ein $x\in X$ existiert mit $xRy$.
-\begin{auf}
+\begin{task}
 Die Komposition linkstotaler Relationen ist linkstotal. Die Komposition rechtstotaler Relationen ist rechtstotal.
-\end{auf}
+\end{task}
 $X\xlongrightarrow{R}Y$ heißt \Def{linkseindeutig}, wenn zu jedem $y\in Y$ höchstens ein $x\in X$ existiert mit $xRy$. Sie heißt \Def{rechsteindeutig}, wenn zu jedem $x\in X$ höchstens ein $y\in Y$ existiert mit $xRy$.
-\begin{auf}
+\begin{task}
 Die Komposition linkseindeutiger Relationen ist linkseindeutig. Die Komposition rechtseindeutiger Relationen ist rechtseindeutig.
-\end{auf}
+\end{task}
 Eine Relation $X\xlongrightarrow{f}Y$ heißt \Def{Abbildung}, wenn sie linkstotal und rechtseindeutig ist; das heißt, wenn zu jedem $x\in X$ genau ein $y\in Y$ existiert mit $xfy$. Dieses eindeutig bestimmte Element aus $Y$ bezeichnen wir mit $f(x)$ und nennen es das \Def{Bild} von $x$ unter $f$. Statt $f(x)$ schreiben wir auch $fx$ und vermeiden unnötige Klammern wann immer möglich. Eine Abbildung ist vollständig charakterisiert durch Angabe von Domäne, Kodomäne und für jedes Element aus der Domäne dessen Bild. Wir schreiben hierfür
 \[
 X\xlongrightarrow{f}Y\,,\qquad x\longmapsto fx
@@ -142,7 +142,7 @@ X\xlongrightarrow{g\circ f}Y\,,\qquad x\longmapsto gfx\,.
 Eine Abbildung $X\xlongrightarrow{f}Y$ heißt \Def{injektiv}, wenn sie linkseindeutig ist. Das heißt, dass aus $fx_1=fx_2$ stets $x_1=x_2$ folgt. Sie heißt \Def{surjektiv}, wenn sie rechtstotal ist, das heißt, dass es zu jedem $y\in Y$ ein $x\in X$ gibt mit $fx=y$. Ein solches Element heißt \Def{Urbild} von $y$. Die Abbildung $f$ ist also genau dann injektiv, wenn jedes $y\in Y$ höchstens ein Urbild hat und genau dann surjektiv wenn jedes $y\in Y$ mindestens ein Urbild hat. $f$ heißt \Def{bijektiv}, wenn $f$ injektiv und surjektiv ist, wenn also jedes $y\in Y$ genau ein Urbild hat.
 
 Es sei weiterhin $X\xlongrightarrow{f}Y$ eine Abbildung. Ist $A$ eine Teilmenge von $X$, so schreiben wir 
-\[fA=\left\{y\in Y\strich y=fx\textnormal{ für ein gewisses }x\in X\right\}\,.\]
+\[fA=\left\{y\in Y\strich y=fx\text{ für ein gewisses }x\in X\right\}\,.\]
 $fA$ ist also die Menge aller Bilder von Elementen aus $A$. Wir nennen $fA$ auch das \Def{Bild} von $A$ unter $f$.
 
 Ist $B$ eine Teilmenge von $Y$, so heißt
@@ -151,7 +151,7 @@ f^{-1}B=\left\{x\in X\mid fx\in B\right\}
 \]
 das \Def{Urbild} von $B$ unter $f$.
 
-\begin{bsp}
+\begin{example}
 Ist $X$ Teilmenge einer Menge $Y$, so haben wir die \Def{Inklustionsabbildung}
 \[
 X\xlongrightarrow{\iota}Y\,,\qquad x\longmapsto x\,,
@@ -165,7 +165,7 @@ Für jede Menge $X$ nennen wir $\id_X$ die \emph{Identität} auf $X$. Sind $R,Y$
 W\xlongrightarrow{R}X\xlongrightarrow{\id_X}X\xlongrightarrow{S}Y\,,
 \]
 so gilt offenbar $\id_X\circ W=W$ und $S\circ\id_X=X$.
-\end{bsp}
+\end{example}
 
 Sind $X,Y$ Klassen und nicht notwendigerweise Mengen, so nennen wir eine Teilmenge $R\subseteq\ll X,Y\rr$ eine \Def{Relation} zwischen $X$ und $Y$, ohne Domäne und Kodomäne zum Teil der Definition zu machen. Die Begriffe \Def{linkstotal}, \Def{rechtstotal}, \Def{linkseindeutig}, \Def{rechtseindeutig} und \Def{Abbildung} verwenden wir analog.
 
@@ -175,9 +175,9 @@ Ist $U\xlongrightarrow{f}U$ eine Abbildung aus der Allklasse in sich selbst und 
 
 Dieses \Def{Ersetzungsaxiom} ist äquivalent zur folgenden stärkeren Formulierung:
 
-\begin{auf}
+\begin{task}
 Es sei $V\xlongrightarrow{f}W$ eine Abbildung von Klassen. Für jede Menge $X\subseteq V$ ist dann auch $fX$ eine Menge. 
-\end{auf}
+\end{task}
 
 \section{Mengentheoretische Konstruktionen}
 
@@ -185,19 +185,19 @@ Eine Abbildung $I\xlongrightarrow{x}X$ von Mengen nennen wir manchmal eine \Def{
 
 Ist $(X_i)_{i\in I}$ eine Familie von Mengen, so bezeichnen wir mit
 \[
-\bigcup_{i\in I}X_i=\left\{x\mid x\in X_i\textnormal{ für ein }i\in I\right\}
+\bigcup_{i\in I}X_i=\left\{x\mid x\in X_i\text{ für ein }i\in I\right\}
 \]
 die \Def{Vereinigung} der Familie. Schreiben wir die Familie als Abbildung $I\xlongrightarrow{X}Y$, so gilt offenbar $\bigcup_{i\in I}X_i=\bigcup XI$ und die Vereinigung der Familie bildet nach dem Vereinigungsaxiom sogar eine Menge.
 
 Mit
 \[
-\bigcap_{i\in I}X_i=\left\{x\mid x\in X_i\textnormal{ für alle } i\in I\right\}
+\bigcap_{i\in I}X_i=\left\{x\mid x\in X_i\text{ für alle } i\in I\right\}
 \]
 bezeichnen wir den \Def{Durchschnitt} der Familie. Falls $I$ leer ist, ist der Durchschnitt die Allklasse. Andernfalls ist der Durchschnitt offenbar in der Vereinigung enthalten und bildet nach dem Teilmengenaxiom eine Menge.
 
 Die Menge
 \[
-\prod_{i\in I}X_i=\left\{(x_i)_{i\in I}\in\left(\bigcup_{i\in I}X_i\right)^I\strich x_i\in X_i\textnormal{ für alle} i\in I\right\}
+\prod_{i\in I}X_i=\left\{(x_i)_{i\in I}\in\left(\bigcup_{i\in I}X_i\right)^I\strich x_i\in X_i\text{ für alle} i\in I\right\}
 \]
 heißt das \Def{kartesische Produkt} der Familie.
 
@@ -206,11 +206,11 @@ Für jedes $i\in I$ haben wir eine Abbildung
 \prod_{i\in I}\xlongrightarrow{\pi_i}X_i\,,\qquad(x_i)_{i\in I}\longmapsto x_i\,,
 \]
 welche wir die \Def{Projektion} auf die $i$-te Komponente nennen.
-\begin{auf}
+\begin{task}
 Es sei $(X_i)_{i\in I}$ eine Familie von Mengen. Ist $W$ eine Mengen und $(W\xlongrightarrow{f_i}X_i)_{i\in I}$ eine Familie von Abbildungen, so existiert genau eine Abbildung
 \[W\xlongrightarrow{f}\prod_{i\in I}X_i\]
 mit $f_i=\pi_i\circ f$ für alle $i\in I$.
-\end{auf}
+\end{task}
 
 Es seien zwei Mengen $X_1,X_2$ gegeben. In diesem Fall bezeichnen wir das kartesische Produkt
 \[
@@ -218,12 +218,12 @@ Es seien zwei Mengen $X_1,X_2$ gegeben. In diesem Fall bezeichnen wir das kartes
 \]
 mit $X_1\times X_2$. Für ein Element $(x_i)_{i\in\{1,2\}}\in X_1\times X_2$ schreiben wir $\l x_1,x_2\r$ und nennen es ein \Def{Paar}. Haben wir noch eine dritte Menge $X_3$, so schreiben wir $X_1\times X_2\times X_3$ für das Produkt $\prod_{i\in\{1,2,3\}}X_i$ und schreiben $\l x_1,x_2,x_3\r$ für ein Element $(x_i)_{i\in\{1,2,3\}}$ des Produktes. Ein solches Element heißt \Def{Tripel}.
 
-\begin{bsp}
+\begin{example}
 Es seien $X_1\xlongrightarrow{g_1}W_1$ und $X_2\xlongrightarrow{g_2}W_2$ zwei Abbildungen. Wir setzen $W=X_1\times W_2$, $f_1=g_1\circ\pi_1$, $f_2=g_2\circ\pi_2$. Nach obiger Aufgabe existiert genau eine Abbildung $W_1\times W_2\xlongrightarrow{f}X_1\times X_2$, sodass $g_1\circ\pi_1=\pi_1\circ f$ und $g_2\circ\pi_2=\pi_2\circ f$ (wobei wir hier natürlich $\pi_i$ für die Projektionen sowohl von $X_1\times X_2$ als auch für die von $W_1\times W_2$ schreiben). Die eindeutig bestimmte Abbildung $f$ bezeichnen wir mit $g_1\times g_2$. Sie ist gegeben durch
 \[
 W_1\times W_2\xlongrightarrow{g_1\times g_2}X_1\times X_2\,,\qquad \l w_1,w_2\r\longmapsto\l g_1w_1,g_2w_2\r\,.
 \]
-\end{bsp}
+\end{example}
 Mithilfe des kartesischen Produktes können wir das \Def{Auswahlaxiom} leicht formulieren
 \begin{axiom}
 Das kartesische Produkt einer Familie von nichtleeren Mengen ist nichtleer.
