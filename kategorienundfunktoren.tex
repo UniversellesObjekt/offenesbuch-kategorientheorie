@@ -132,11 +132,11 @@ X\xlongrightarrow{f}Y\,,\qquad x\longmapsto fx
 \]
 oder auch
 \[
-X\xlongrightarrow{x\longmapsto fx}\,.
+X\xlongrightarrow{x\longmapsto fx}Y\,.
 \]
 Nach obigen Aufgaben ist die Komposition von Abbildungen $X\xlongrightarrow{f}Y\xlongrightarrow{g}Z$ wieder eine Abbildung. Sie ist offenbar gegeben durch
 \[
-X\xlongrightarrow{g\circ f}Y\,,\qquad x\longmapsto gfx\,.
+X\xlongrightarrow{g\circ f}Z\,,\qquad x\longmapsto gfx\,.
 \]
 
 Eine Abbildung $X\xlongrightarrow{f}Y$ heißt \Def{injektiv}, wenn sie linkseindeutig ist. Das heißt, dass aus $fx_1=fx_2$ stets $x_1=x_2$ folgt. Sie heißt \Def{surjektiv}, wenn sie rechtstotal ist, das heißt, dass es zu jedem $y\in Y$ ein $x\in X$ gibt mit $fx=y$. Ein solches Element heißt \Def{Urbild} von $y$. Die Abbildung $f$ ist also genau dann injektiv, wenn jedes $y\in Y$ höchstens ein Urbild hat und genau dann surjektiv wenn jedes $y\in Y$ mindestens ein Urbild hat. $f$ heißt \Def{bijektiv}, wenn $f$ injektiv und surjektiv ist, wenn also jedes $y\in Y$ genau ein Urbild hat.
@@ -164,7 +164,7 @@ Für jede Menge $X$ nennen wir $\id_X$ die \emph{Identität} auf $X$. Sind $R,Y$
 \[
 W\xlongrightarrow{R}X\xlongrightarrow{\id_X}X\xlongrightarrow{S}Y\,,
 \]
-so gilt offenbar $\id_X\circ W=W$ und $S\circ\id_X=X$.
+so gilt offenbar $\id_X\circ R=R$ und $S\circ\id_X=\id_X$.
 \end{example}
 
 Sind $X,Y$ Klassen und nicht notwendigerweise Mengen, so nennen wir eine Teilmenge $R\subseteq\ll X,Y\rr$ eine \Def{Relation} zwischen $X$ und $Y$, ohne Domäne und Kodomäne zum Teil der Definition zu machen. Die Begriffe \Def{linkstotal}, \Def{rechtstotal}, \Def{linkseindeutig}, \Def{rechtseindeutig} und \Def{Abbildung} verwenden wir analog.
@@ -259,7 +259,7 @@ Ist $\U$ ein Universum, so kann man sich überlegen, dass ferner gilt:
 \item Ist $Y\in\U$ und gilt $X\subseteq Y$, so folgt $X\in\U$.
 \end{itemize}
 
-In anderen Worten können wir alle Konstruktionen, die wir in $U$ eingeführt haben, auch in jedem Universum $\U$ durchführen. Zusammen mit dem nachfolgenden \Def{Universenaxiom} sichert dies, dass man Mathematik sorgenfrei innerhalb eines Universums durchführen kann.
+In anderen Worten können wir alle Konstruktionen, die wir in $U$ eingeführt haben, auch in jedem Universum $\U$ durchführen. Zusammen mit dem nachfolgenden \Def{Universenaxiom} sichert dies, dass man Mathematik sorgenfrei innerhalb eines Universums betreiben kann.
 
 \begin{axiom}
 Jede Menge ist Element eines Universums.
