@@ -1,1 +1,68 @@
-.
+\section{Kategorien}
+
+Ein \Def{(gerichteter) Graph} ist ein Quadrupel $A=\langle O,P,d,c \rangle $ bestehend aus einer Menge $O$, deren Elemente wir \Def{Objekte} und einer Menge $P$, deren Elemente wir $\Def{Pfeile}$ nennen und zwei Abbildungen $P\xlongrightarrow{d,c}O$. Wir nennen ein Paar $\langle f,g\rangle$ von Pfeilen \Def{zusammensetzbar}, wenn $cf=dg$ gilt. Wir bezeichnen die Menge der zusammensetzbaren Paare von Pfeilen mit $A_\circ=\left\{\langle f,g\in P\times P\rangle\mid cf=dg \right\}$.
+
+Es seien $A=\langle O,P,d,c \rangle $, $A'=\langle O',P',d',c' \rangle $ zwei Graphen. Ein \Def{Graphenhomomorphismus} $A\xlongrightarrow{F} A'$ besteht aus zwei Abbildungen $O\longrightarrow O'$, $P\longrightarrow P'$, welche wir beide mit $F$ bezeichnen, sodass für $f\in P$ stets gilt:
+\[F(d\ f)=d'(Ff)\,,\qquad F(c\ f)=c'(Ff)\,. \]
+
+Ein Graph heißt \Def{klein}, wenn sowohl die Menge der Objekte, als auch die Menge der Pfeile klein sind.
+
+Eine Kategorie $\A$ besteht aus einem Graphen $A=\langle O,P,d,c\rangle$, sowie zwei Abbildungen
+\[O\xlongrightarrow{i} P\,,\qquad a\longrightarrow \id_a\]
+\[A_\circ\xlongrightarrow{k}P\,,\qquad \langle f,g\rangle\longrightarrow g\circ f\]
+sodass die folgenden Gleichungen für alle $a\in A$, sowie $f,g,h\in P$ erfüllt sind:
+\begin{itemize}
+\item $d(\id_a)=c(\id_a)=a$.
+\item Aus $\langle f,g\rangle\in A_\circ$ folgt $d(g\circ f)=d\ f$ und $c(g\circ f)=c\,g$.
+\item Aus $\langle f,g\rangle,\langle g,h\rangle\in A_\circ$ gilt $(h\circ g)\circ f=h\circ(g\circ f)$.
+\item Für $c\ f=a$ gilt $\id_a\circ f=f$.
+\item Für $d\ f=a$ gilt $f\circ \id_a=f$.
+\end{itemize}
+Statt $d\, f$ schreiben wir üblicherweise $\dom f$ und nennen $\dom f$ die \Def{Domäne} von $f$. Statt $c\, f$ schreiben wir üblicherweise $\cod f$ und nennen $\cod f$ die \Def{Kodomäne} von $f$. Statt $\dom f=a$ und $\cod f=b$ schreiben wir häufig $a\xlongrightarrow{f}b$.
+
+Wir nennen $\id_a$ die \Def{Identität} von $a$. Der erste Punkt besagt dann, dass sowohl Domäne als auch Kodomäne der Identität von $a$ mit $a$ übereinstimmen, oder anders ausgedrückt, dass $a\xlongrightarrow{\id_a}a$.
+
+Der zweite Punkt besagt, dass aus $a\xlongrightarrow{f}b$ und $b\xlongrightarrow{g}c$ (dies heißt, dass $\langle f,g\rangle\in A_\circ$) folgt, dass $a\xlongrightarrow{g\circ f}c$. Dies erklärt den Ausdruck des zusammensetzbaren Paares. Zwei Pfeile heißen zusammensetzbar, wenn das Ende des ersten mit dem Anfang des zweiten übereinstimmt. Statt $g\circ f$ schreiben wir manchmal kürzer $gf$. Wir nennen $gf$ das \Def{Kompositum} oder die \Def{Verknüpfung} von $f$ und $g$. Verknüpfen wir zwei Pfeile, so stimmt der Anfang (die Domäne) der Verknüpfung mit dem Anfang des ersten Pfeiles überein, und das Ende (die Kodomäne) der Verknüpfung mit dem des zweiten. Manchmal schreiben wir für die Verknüpfung auch $a\xlongrightarrow{f}b\xlongrightarrow{g}c$.
+
+Der dritte Punkt drückt aus, dass die Reihenfolge, in der wir Pfeile verknüpfen irrelevant ist. Haben wir also einen dritten Pfeil $c\xlongrightarrow{h}d$, so stimmt die Verknüpfung $a\xlongrightarrow{f}(b\xlongrightarrow{g}c\xlongrightarrow{h}d)$mit der Verknüpfung $(a\xlongrightarrow{f}b\xlongrightarrow{g}c)\xlongrightarrow{h}d$ überein. Aus diesem Grund können wir die Klammern vernachlässigen und schreiben $a\xlongrightarrow{f}b\xlongrightarrow{g}c\xlongrightarrow{h}d$ oder $h\circ g\circ f$ oder $hgf$. Wir nennen diese Forderung das \Def{Assoziativgesetz}.
+
+Die letzten beiden Punkte besagen, dass sich bei Komposition mit der Identität nichts ändert.
+
+Wir schreiben häufig $a\in\A$, wenn $a\in O$ gilt, wenn also $a$ ein Objekt von $\A$ ist. Für $a,b\in\A$ bezeichnen wir mit $\A(a,b)$ die Menge der Pfeile $a\longrightarrow b$ mit Domäne $a$ und Kodomäne $b$. Ein Pfeil, dessen Domäne und Kodomäne übereinstimmen nennen wir $\Def{Endomorphismus}$. Zwei Pfeile heißen \Def{parallel}, wenn sie dieselbe Domäne und dieselbe Kodomäne besitzen.
+
+Die Kategorie $\A$ heißt \Def{klein}, wenn ihre Objektmenge und ihre Pfeilmenge klein sind. Sie heißt \Def{lokal klein}, wenn für je zwei Objekte $a,b$ die Menge $\Hom(a,b)$ klein ist.
+
+Alle Bezeichnungen und Eigenschaften sollten den Leser an das erste der folgenden Beispiele erinnern, welches vorerst als Motivation für alle eingeführten Konzepte dient.
+
+\begin{bsp}
+\begin{enumerate}
+\item $\Set$ ist die Kategorie, welche als Objekte alle kleinen Mengen, als Pfeile alle Abbildungen zwischen solchen, als Komposition die Komposition von Abbildungen und als Identität die Identitäts-Abbildungen besitzt.
+\item $\Set_\Rel$ ist die Kategorie, welche als Objekt alle kleinen Mengen, als Pfeile alle Relationen zwischen solchen hat, und deren Komposition bzw. Identitäten durch die übliche Komposition von Relationen und die identische Relation gegeben sind.
+\item Eine \Def{punktierte Menge} ist ein Paar $\langle A,a\rangle$ mit $a\in A$. Wir haben dann die Kategorie $\Set_\ast$, welche als Objekte alle kleinen punktierten Mengen hat, und als Pfeile $\langle A,a\rangle\longrightarrow\langle B,b\rangle$ alle solchen Abbildungen $A\xlongrightarrow{f}B$ mit $f\, a=b$. Als Komposition und Identität können wir Komposition und Identität von Abbildungen wählen.
+\item Die kleinen gerichteten Graphen bilden eine Kategorie \Def{Grph} mit Graphenhomomorphismen als Pfeile.
+\item Zu jeder Menge $A$ können wir eine Kategorie $\D_A$ bilden, welche als Objekte alle $a\in A$ hat und als Pfeile lediglich einen Pfeil $a\xlongrightarrow{\id_a}a$ für jedes $a\in a$ besitzt, welcher mit sich selbst verknüpft wieder sich selbst ergibt. Jeder Pfeil dieser Kategorie ist die Identität eines Objektes. Eine Kategorie mit dieser Eigenschaft heißt \Def{diskret}.
+\item Die Kategorie $\0$ hat keine Objekte und folglich auch keine Pfeile. Alle Daten wie Identität, Komposition, Domäne, etc. lassen sich nur auf eine Weise definieren und die Eigenschaften einer Kategorie sind trivialerweise erfüllt.
+\end{enumerate}
+\end{bsp}
+
+Sehr kleine Kategorien können wir graphisch veranschaulichen. Für jedes Objekt zeichnen wir einen Punkt und für Pfeile einen Pfeil zwischen solchen Punkten. Dabei befolgen wir diese Regeln:
+\begin{itemize}
+\item Wir zeichnen keine Identitäten ein.
+\item Verschiedene Punkte repräsentieren verschiedene Objekte.
+\item Verschiedene eingezeichnete Pfeile repräsentieren verschiedene Pfeile der Kategorie.
+\item Lässt sich ein Pfeil als Verknüpfung eingezeichneter Pfeile realisieren, so zeichnen wir ihn nicht ein.
+\end{itemize}
+
+\begin{bsp}
+\begin{enumerate}
+\item Die Kategorie $\bullet$ hat genau ein Objekt und genau einen Pfeil. Wir bezeichnen sie üblicherweise mit $\1$.
+\item Die Kategorie $\2=(\bullet\longrightarrow\bullet)$ hat zwei Objekte und insgesamt drei Pfeile.
+\item Die Kategorie $\3=(\bullet\longrightarrow\bullet\longrightarrow\bullet)$ hat drei Objekte und insgesamt sechs Pfeile.
+\item Die Kategorie $\bullet\longleftarrow\bullet\longrightarrow\bullet$ hat drei Objekte und fünf Pfeile.
+\item Die Kategorie $\bullet\parall{}{}\bullet$ hat genau vier Pfeile.
+\end{enumerate}
+\end{bsp}
+
+Bis auf das letzte Beispiel haben obige Kategorien die folgende Gemeinsamkeit: Zwischen je zwei Objekten existiert höchstens ein Pfeil. Eine Kategorie mit dieser Eigenschaft heißt \Def{Präordnung}. Insbesondere sind diskrete Kategorien Präordnungen.
+
+\section{Kommutative Diagramme}
